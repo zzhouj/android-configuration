@@ -22,19 +22,19 @@ public class MainActivity extends Activity {
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		String configText = "";
 		String screenSize = "unknown";
-		if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_SMALL) != 0) {
+		if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_SMALL) {
 			screenSize = "small";
-		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_NORMAL) != 0) {
+		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
 			screenSize = "normal";
-		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_LARGE) != 0) {
+		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
 			screenSize = "large";
-		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_XLARGE) != 0) {
+		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
 			screenSize = "xlarge";
 		}
 		String screenAspect = "unknown";
-		if ((config.screenLayout & Configuration.SCREENLAYOUT_LONG_YES) != 0) {
+		if ((config.screenLayout & Configuration.SCREENLAYOUT_LONG_MASK) == Configuration.SCREENLAYOUT_LONG_YES) {
 			screenAspect = "long";
-		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_LONG_NO) != 0) {
+		} else if ((config.screenLayout & Configuration.SCREENLAYOUT_LONG_MASK) == Configuration.SCREENLAYOUT_LONG_NO) {
 			screenAspect = "notlong";
 		}
 		String screenOrientation = "unknown";
